@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Space In Between</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script type="text/javascript" src="js/youtube.js"></script>
+
+</head>
+
+<body class="">
+
+	<header>
+		<nav>
+			<div class="logo">YouTube</div>
+			<!-- Nothing here now -->
+		</nav>
+	</header>
+
+	<main class="container">
+		<section class="searchbox">
+	        <div class="stretch">
+	            <input type="text" placeholder="Search..."  id="query" />
+	        </div>
+	        <div class="normal">
+	            <button id="search">Search</button>
+	        </div>
+	    </section>
+
+	    <section id="recentsearch"></section>
+
+	    <section id="results">Loading...</section>
+
+	    <section class="pagination">
+	    	<button id="previous">Previous</button>
+	    	<button id="next">Next</button>
+	    </section>
+	</main>
+
+	<footer></footer>
+</body>
+</html>

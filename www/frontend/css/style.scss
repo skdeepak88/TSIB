@@ -1,0 +1,187 @@
+@import 'fonts';
+@import 'variables';
+@import 'reset';
+@import 'mixin';
+
+// Reset
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-size: $base_font_size;
+    font-family: $default_font;
+    background-color: $bg_color;
+    line-height: 1.8em;
+    font-size-adjust: 0.46;
+}
+
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button { padding: .5em 1em; white-space: nowrap; }
+
+ header {
+
+ 	height: 50px;
+ 	background: $header_colour;
+ 	min-width: 100%;
+
+	.logo {
+		float: left;
+		padding: 15px 10px;
+		color: white;
+		font-size: 3.1em;
+	}
+
+}
+
+.container {
+	padding: 20px;
+	width: 100%;
+
+	.searchbox {
+
+		display: flex;
+
+		.stretch {
+			flex: 1;
+		}
+
+		.normal {
+			flex: 0;
+			margin: 0 0 0 1rem;
+		}
+
+		div {
+			input {
+				padding: .5em 1em;
+				width: 100%;
+				height: 45px;
+				font-size: 2em;
+				@include search-field;
+			}
+
+			input[placeholder] {
+				@include search-field-placeholder;
+			}
+
+			button {
+				padding: .5em 1em;
+				height: 45px;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	#recentsearch {
+		font-size: 1.5em;
+		margin-top: 5px;
+	}
+
+	#results {
+
+		margin: 30px auto;
+		overflow: hidden;
+
+		.thumbnail {
+
+			float:left;
+			margin:  2% 2% 10px 2%;
+			text-align: center;
+			background: #fff;
+			padding: 10px;
+    		min-height: 351px;
+    		@include box-shadow(0px, 0px, 5px, rgba(0,0,0,0.37));
+
+
+			img {
+				max-width: 100%;
+			}
+
+			h3 {
+				color: #4a4a4a;
+				font-size: 1.5em;
+			}
+
+			p {
+				color: #a9a9a9;
+				font-size: 1.1em;
+			}
+		}
+	}
+
+	.pagination {
+
+		text-align: center;
+
+		button {
+			padding: .5em 1em;
+			height: 35px;
+			white-space: nowrap;
+			margin-left: 1em;
+			margin-bottom: 2em;
+		}
+	}
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1025px) {
+
+	/* Styles */
+	nav {
+		max-width: 1260px;
+	    margin: auto;
+	    padding: 0px 15px;
+	}
+
+	main {
+		max-width: 1260px;
+	    margin: auto;
+	}
+
+	#results {
+
+		.thumbnail {
+			width: 29.3333%;
+
+			&:nth-child(3n+1) {
+			   clear: both;
+			}
+		}
+
+	}
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+	/* Styles */
+	#results {
+
+		.thumbnail {
+			width: 46%;
+
+			&:nth-child(2n+1) {
+			   clear: both;
+			}
+		}
+	}
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+
+	/* Styles */
+	#results {
+
+		.thumbnail {
+			width: 100%;
+			clear: both;
+		}
+
+	}
+
+}
+

@@ -1,0 +1,42 @@
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $top $left $blur $color;
+		-moz-box-shadow:inset $top $left $blur $color;
+		box-shadow:inset $top $left $blur $color;
+	} @else {
+		-webkit-box-shadow: $top $left $blur $color;
+		-moz-box-shadow: $top $left $blur $color;
+		box-shadow: $top $left $blur $color;
+	}
+}
+
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin gradient($from, $to) {
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -moz-linear-gradient(top,  $from, $to);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin search-field {
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	font: 14px/100% $open-sans;
+	padding: .5em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	border: 1px solid $border_text_box;
+	@include box-sizing;
+}
+
+@mixin search-field-placeholder {
+	vertical-align: middle;
+	line-height: 2em;
+	font-size: 2em;
+}

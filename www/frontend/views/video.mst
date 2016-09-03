@@ -1,0 +1,11 @@
+{{#items}}
+<div class="thumbnail">
+	 {{#snippet}}
+	 	{{#thumbnails}}
+	 		<img src="{{high.url}}" />
+	 	{{/thumbnails}}
+	 	<h3>{{title}}</h3>
+	 	<p>{{channelTitle}}</p>
+	 {{/snippet}}
+</div>
+{{/items}}
